@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +10,7 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/256/3984/3984329.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles.css">
     <?php include './boot_css.php' ?>
+
     <title>Etsy Pakistan - Shop for handmade products</title>
 </head>
 
@@ -54,14 +58,56 @@
         </div>
     </div>
 
+
+
+    <!-- loading skeletons -->
+
+
+
+    <?php include './loader.php' ?>
+
+
+
     <!-- categories section -->
     <?php include './categories.php' ?>
+    <!-- products section -->
+    <?php include './products.php' ?>
 
+
+
+    <?php include './jquery.php' ?>
+
+    <script>
+    function loadCategories() {
+        $.ajax({
+            url: './get-categories-ajax.php',
+            type: 'GET',
+            data: {},
+            beforeSend: function() {
+                $('.loading').removeClass('d-none')
+                $('.loading').addClass('d-flex')
+            },
+            success: function(response) {
+                $('.my-categories').html(response)
+                $('.loading').removeClass('d-flex')
+                $('.loading').addClass('d-none')
+            }
+        })
+    }
+
+
+    loadCategories()
+    </script>
 
 
     <script src="./app.js">
 
     </script>
+
+
+
+
+
 
 
 

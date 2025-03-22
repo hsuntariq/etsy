@@ -73,8 +73,22 @@
         </div>
         <div class="d-flex align-items-center">
 
-            <small class="fw-semibold hover-categories sign-in cursor-pointer" style="white-space: nowrap;">Sign
-                in</small>
+            <small class="fw-semibold hover-categories sign-in cursor-pointer text-capitalize"
+                style="white-space: nowrap;">
+
+
+                <?php
+                if (isset($_SESSION['user_success'])) {
+                    echo $_SESSION['user_success'];
+                } else {
+                    echo "<a href='./signIn.php' class='text-decoration-none text-orange login'>Sign In</a>";
+                }
+                ?>
+
+
+
+
+            </small>
 
             <div class="d-flex">
                 <div style="width:40px;height:40px;"
@@ -89,6 +103,18 @@
                     class="bg-search hover-blue cursor-pointer  rounded-pill d-flex justify-content-center align-items-center">
                     <i class="bi bi-bag"></i>
                 </div>
+                <?php
+                if (isset($_SESSION['user_success'])) {
+                ?>
+
+                <a href="./logout.php" style="width:40px;height:40px;"
+                    class="bg-search hover-blue text-danger cursor-pointer  rounded-pill d-flex justify-content-center align-items-center">
+                    <i class="bi bi-power"></i>
+                </a>
+                <?php
+                }
+                ?>
+
             </div>
         </div>
 

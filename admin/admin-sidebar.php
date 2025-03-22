@@ -39,7 +39,7 @@
                 </span>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item text-dark" href="./add-product.php">Add Products</a></li>
-                    <li><a class="dropdown-item text-dark" href="./view-category.php">View Products</a></li>
+                    <li><a class="dropdown-item text-dark" href="./view-product.php">View Products</a></li>
                 </ul>
             </div>
         </li>

@@ -1,6 +1,20 @@
 :root {
   --primary: #f27224;
+  --gray: #757575;
 }
+
+.text-gray {
+  color: var(--gray) !important;
+}
+
+.text-orange {
+  color: var(--primary) !important;
+}
+
+.bg-orange {
+  background-color: var(--primary) !important;
+}
+
 .cursor-pointer {
   cursor: pointer !important;
 }
@@ -53,6 +67,10 @@
 .hover-categories:hover::after {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+}
+
+.login:active {
+  color: green !important;
 }
 
 .bg-search {
@@ -159,12 +177,84 @@
 .editor-option {
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  transition: all 0.3s;
 }
 
 .editor-option:hover {
   background-color: lightgray;
 
   cursor: pointer;
+}
+
+.active {
+  background-color: #f27427 !important;
+  color: white !important;
+}
+
+.bold {
+  font-weight: 650;
+}
+.underline {
+  text-decoration: underline;
+}
+.strike {
+  text-decoration: line-through;
+}
+.left {
+  text-align: left;
+}
+.justify {
+  text-align: justify;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.italic {
+  font-style: italic;
+}
+
+.switch {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #8c57ff;
+  padding: 0.3rem 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.switch-btn {
+  width: 20px;
+  height: 15px;
+  clip-path: circle();
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-outline-orange {
+  border: 1px solid var(--primary);
+  transition: all 0.3s;
+  color: var(--primary);
+}
+.btn-outline-orange:hover {
+  background-color: #f69a6c;
+  color: white !important;
+}
+
+.move-switch {
+  transform: translateX(-20px);
+}
+.inactive-switch {
+  background-color: #eae9eb;
 }
 
 @media (max-width: 900px) {

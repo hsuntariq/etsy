@@ -1,11 +1,12 @@
 <?php
 session_start();
+
 function displayMessage($name, $variant)
 {
     if (isset($_SESSION[$name])) {
 ?>
 
-<div class="position-fixed rounded-3 flash-message z-3 p-3 bottom-0 end-0" style="transform: translateY(105%);opacity:0;transition:all 0.6s; background: 
+<div class="position-fixed w-25 rounded-3 flash-message z-3 p-3 bottom-0 end-0" style="transform: translateY(105%);opacity:0;transition:all 0.6s; background: 
             <?php
             if ($variant == 'red') {
                 echo "red";

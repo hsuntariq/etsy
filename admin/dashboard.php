@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +19,21 @@
 </head>
 
 <body>
+
+    <?php
+
+    if (!isset($_SESSION['user_success'])) {
+        header("Location: /");
+    }
+
+    if (isset($_SESSION['user_success']) && isset($_SESSION['role'])) {
+        if ($_SESSION['role'] !== 'admin') {
+            header("Location: /");
+        }
+    }
+    ?>
+
+
     <div class="p-0 m-0" style="background-color: #F2EDF3;">
         <?php include './admin-nav.php' ?>
         <?php include './admin-main-content.php' ?>
